@@ -1,0 +1,49 @@
+package maincircle;
+
+import java.util.Scanner;
+
+public class Circle {
+
+    private Point point;
+    private double dRadius;
+
+    public Circle() {
+
+        point = new Point();
+        setRadius();
+
+    }
+
+    public Point getPoint() {
+        return point;
+    }
+
+    public double getRadius() {
+        return dRadius;
+    }
+
+    public void setRadius() {
+        while (true) {
+            System.out.print("Input Radius : ");
+            Scanner sc = new Scanner(System.in);
+            String sRadius = sc.nextLine();
+            if (sRadius.isEmpty() || Integer.valueOf(sRadius) == 0) {
+                this.dRadius = 1;
+                break;
+            } else if (Integer.valueOf(sRadius) > 0) {
+                this.dRadius = Integer.valueOf(sRadius);
+                break;
+            } else {
+                System.out.println("** Please Input More Than 0 **");
+            }
+        }
+    }
+
+    public double getArea() {
+        return Math.PI * Math.pow(dRadius, 2);
+    }
+
+    public double getLine() {
+        return 2 * Math.PI * dRadius;
+    }
+}
