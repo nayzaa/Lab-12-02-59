@@ -1,0 +1,52 @@
+package maincircle;
+
+import java.util.Scanner;
+
+public class Point {
+
+    private int nX,nY;
+    
+    public Point() {
+
+        setX();
+        setY();
+        
+    }
+
+    public int getX() {
+        return nX;
+    }
+
+    public void setX() {
+        while (true) {
+            System.out.print("Input Point X : ");
+            Scanner sc = new Scanner(System.in);
+            String sX = sc.nextLine();
+            if (sX.isEmpty()) {
+                System.out.println("** Please Input Point X **");
+            } else {
+                this.nX = Integer.valueOf(sX);
+                break;
+            }
+        }
+    }
+
+    public int getY() {
+        return nY;
+    }
+
+    public void setY() {
+        while (true) {
+            System.out.print("Input Point Y : ");
+            Scanner sc = new Scanner(System.in);
+            String sY = sc.nextLine();
+            if (sY.isEmpty()) {
+                System.out.println("** Please Input Point Y **");
+            } else {
+                this.nY = Integer.valueOf(sY);
+                break;
+            }
+        }
+    }
+
+}
