@@ -1,0 +1,29 @@
+package maincircle;
+
+public class MainCircle {
+
+    public static void main(String[] args) {
+        
+        System.out.println("----- Circle 1 -----");
+        Circle c1 = new Circle();
+        System.out.println("----- Circle 2 -----");
+        Circle c2 = new Circle();
+        System.out.println("--------------------");
+        System.out.println("Point 1 : (" + c1.getPoint().getX() + "," + c1.getPoint().getY() + ")");
+        System.out.println("Point 2 : (" + c2.getPoint().getX() + "," + c2.getPoint().getY() + ")");
+        System.out.println("Area 1 : " + c1.getArea());
+        System.out.println("Area 1 : " + c2.getArea());
+        System.out.println("เส้นรอบวง 1 : " + c1.getLine());
+        System.out.println("เส้นรอบวง 2 : " + c2.getLine());
+        double distance = Math.sqrt(Math.pow(c2.getPoint().getX() - c1.getPoint().getX(), 2) + 
+                Math.pow(c2.getPoint().getY() - c1.getPoint().getY(), 2));
+        if(distance < c1.getRadius() + c2.getRadius()) {
+            System.out.println("C1 and C2 is \"Intersect\"");
+        }else{
+            System.out.println("C1 and C2 is \"Not Intersect\"");
+        }
+    }
+    
+    
+    
+}
