@@ -1,0 +1,12 @@
+package maincircle;
+
+public class MainEmployee {
+
+    public static void main(String[] args) {
+
+        Employee test = new Employee();
+        System.out.println(test.getEmID());
+        System.out.println(test.getEmName());
+    }
+
+}
