@@ -1,0 +1,59 @@
+package maincircle;
+
+import java.util.Scanner;
+
+public class Employee {
+
+    private String sEmployeeName;
+    private int nEmployeeID;
+
+    public Employee() {
+        setEmID();
+        setEmName();
+    }
+
+    public String getEmName() {
+        return sEmployeeName;
+    }
+
+    public void setEmName() {
+        while (true) {
+            System.out.print("Input Employee Name : ");
+            Scanner sc = new Scanner(System.in);
+            String sEmployeeName = sc.nextLine();
+            if (sEmployeeName.isEmpty()) {
+                System.out.println("** Please Input Name **");
+            } else {
+                this.sEmployeeName = sEmployeeName;
+                break;
+            }
+        }
+    }
+
+    public int getEmID() {
+        return nEmployeeID;
+    }
+
+    public void setEmID() {
+        while (true) {
+            System.out.print("Input Employee ID : ");
+            Scanner sc = new Scanner(System.in);
+            String sEmployeeID = sc.nextLine();
+            if (sEmployeeID.isEmpty()) {
+                System.out.println("** Please Input ID **");
+            } else {
+                if (Integer.valueOf(sEmployeeID) >= 1 && Integer.valueOf(sEmployeeID) <= 1000) {
+                    this.nEmployeeID = Integer.valueOf(sEmployeeID);
+                    break;
+                } else {
+                    System.out.println("** Please Input 1 - 1000 **");
+                }
+            }
+        }
+    }
+    
+    public void changeName(){
+        setEmName();
+    }
+
+}
